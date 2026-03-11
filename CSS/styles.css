@@ -213,9 +213,8 @@ button:hover {
   line-height: 40px;
   text-wrap: nowrap;
   position: absolute;
-  top: 0;
+  top: 215px;
   right: 0;
-  transform-origin: top right;
 }
 
 .stats-top-row {
