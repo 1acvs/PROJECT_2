@@ -1,135 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/CSS/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="card">
-   <div class="card-Inner">
-    <div class="card-face card-front">
-      <img class="card-img" src="/ASSETS/Zay_Flowers.jpg" alt="s">
-      
-      <div class="card-info">
-       <div class="position">
-        <h2>WR</h2>
-        <p>Wide Reciever</p>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <img
+            class="player-img"
+            src="ASSETS/Zay_Flowers.jpg"
+            alt="Baltimore Ravens WR Zay Flowers"
+          />
 
-      <div class="ovr">
-        <div class="ovr-rating">
-          <p class="ovrnum">96</p>
-          <p class="ovrtxt" >OVR</p>
+          <div class="card-info">
+            <div class="player-header">
+              <div class="player-position">
+                <h2>WR</h2>
+                <p>Wide Reciever</p>
+              </div>
+
+              <div class="player-ovr">
+                <p class="ovrnum">96</p>
+                <p class="ovrtxt">OVR</p>
+              </div>
+            </div>
+            <!-- end player-header -->
+            <div class="player-info">
+              <p class="player-name">Zay Flowers</p>
+              <p class="player-number">4</p>
+              <p class="player-bio">
+                Zay Flowers is a wide receiver for the Baltimore Ravens who
+                played college football at Boston College, where he set a school
+                record with 3,056 receiving yards and totaled 29 touchdowns.
+                Drafted 22nd overall in 2023, he made an immediate NFL impact
+                with 77 receptions for 858 yards and 5 touchdowns in his rookie
+                season.
+              </p>
+            </div>
+
+            <div class="player-logos">
+              <img src="ASSETS/bostoncollege.png" alt="College" />
+              <img src="ASSETS/ravens.png" alt="NFL" />
+            </div>
+
+            <button class="btn btn-player-stats">View Stats</button>
+          </div>
+          <!-- end card info-->
         </div>
+        <!-- end card front -->
+
+        <div class="card-face card-back">
+          <h1 class="header-back">KEY ATTRIBUTES</h1>
+
+          <div class="player-stats">
+            <div class="stat-value">
+              <div class="height-stat">
+                <p class="h-stat">5'9</p>
+                <p class="h-value">Height</p>
+              </div>
+              <!-- end height stat -->
+            </div>
+            <!-- end stat value -->
+
+            <div class="accolades">
+              <span>2x Pro Bowler</span>
+              <span></span>
+            </div>
+            <!-- end accolades -->
+
+            <div class="player-attributes">
+              <div class="attribute">
+                <div class="stat-value">98</div>
+                <div class="stat-label">SPD</div>
+              </div>
+
+              <div class="attribute">
+                <div class="stat-value">92</div>
+                <div class="stat-label">AGI</div>
+              </div>
+
+              <div class="attribute">
+                <div class="stat-value">94</div>
+                <div class="stat-label">CTC</div>
+              </div>
+
+              <div class="attribute">
+                <div class="stat-value">88</div>
+                <div class="stat-label">DRR</div>
+              </div>
+
+              <div class="attribute">
+                <div class="stat-value">92</div>
+                <div class="stat-label">MRR</div>
+              </div>
+
+              <div class="attribute">
+                <div class="stat-value">95</div>
+                <div class="stat-label">SRR</div>
+              </div>
+            </div>
+            <!-- end player attributes -->
+          </div>
+          <!-- end player stats -->
+          <button class="btn btn-player-stats">Close Stats</button>
+        </div>
+        <!-- end card back -->
       </div>
-
-
-      
-        <p class="jersey">4</p>
-    
-
-      <p class="bio">
-        Zay Flowers is a wide receiver for the Baltimore Ravens who played college football at Boston College, where he set a school record with 3,056 receiving yards and totaled 29 touchdowns. Drafted 22nd overall in 2023, he made an immediate NFL impact with 77 receptions for 858 yards and 5 touchdowns in his rookie season.
-      </p>
-
-      
-
-      <div class="playername">
-        <p>Zay Flowers</p>
-      </div>
-
-      
-
-      <div class="logos">
-        <img src="/ASSETS/bostoncollege.png" alt="College">
-        <img src="/ASSETS/ravens.png" alt="NFL">
-      </div>
-
-      <button>
-        View Stats
-      </button>
-</div><!-- end card info-->
-     </div>
-
-     <div class="card-face card-back">
-
-
-      
-        <div class="bheader">
-      <h1>KEY ATTRIBUTES</h1>
+      <!-- end card inner -->
     </div>
-
-    <div class="height-stat">
-      <div class="h-stat">5'9</div>
-      <div class="h-value">Height</div>
-    </div>
-
-    <div class="accolades">
-      <span>2x Pro Bowler</span>
-      <span></span>
-
-    </div>
-
-
-
-
-
-
-    <div class="attribute-grid">
-
-      <div class="attribute">
-        <div class="stat-value">98</div>
-        <div class="stat-label">SPD</div>
-      </div>
-
-      <div class="attribute">
-        <div class="stat-value">92</div>
-        <div class="stat-label">AGI</div>
-      </div>
-
-      <div class="attribute">
-        <div class="stat-value">94</div>
-        <div class="stat-label">CTC</div>
-      </div>
-      
-      <div class="attribute">
-        <div class="stat-value">88</div>
-        <div class="stat-label">DRR</div>
-      </div>
-
-      <div class="attribute">
-        <div class="stat-value">92</div>
-        <div class="stat-label">MRR</div>
-      </div>
-
-      <div class="attribute">
-        <div class="stat-value">95</div>
-        <div class="stat-label">SRR</div>
-      </div>
-        
-
-
-      </div>
-
-
-
-
-
-    
-
-    
-
-
-
-  </div>
-  </div>
-</body>
+    <!-- end card -->
+    <script src="JS/scripts.js"></script>
+  </body>
 </html>

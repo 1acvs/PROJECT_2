@@ -6,16 +6,28 @@
   box-sizing: border-box;
 }
 
-.card {
-  max-width: 400px;
-  aspect-ratio: 400/541;
-  background-color: blue;
+body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.card-Inner {
+.card {
+  width: 400px;
+  aspect-ratio: 400/541;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-inner {
   width: 100%;
   height: 100%;
-  background-color: orange;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  transform-style: preserve-3d;
 }
 
 .card-face {
@@ -24,38 +36,56 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
-  position: relative;
-}
-
-.card-Front .card-img {
   position: absolute;
 }
-.card-Front .card-info {
-  background-color: #B32B2B;
+
+.card-front {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+.card-front .player-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card-front .card-info {
+  background-color: #b32b2b;
   width: 50%;
   padding: 1em;
   height: 100%;
   clip-path: polygon(25% 0%, 100% 0, 100% 100%, 21% 100%, 0 89%, 0 10%);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 16px;
 }
 
-.position {
+.player-header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.player-position {
   display: flex;
   align-items: center;
   flex-flow: column wrap;
-  position: absolute;
-  left: 210px;
-  top: 16px;
+  width: 100px;
+  text-align: right;
 }
-
-.position h2 {
+.player-position h2 {
+  width: 100%;
   font-size: 32px;
   color: #fff;
   line-height: 0.8;
-  margin-block: 0;
+  margin: 0;
   letter-spacing: 1px;
+  text-align: right;
 }
-
-.position p {
+.player-position p {
   font-size: 10px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
@@ -64,8 +94,46 @@
   margin-top: 2px;
 }
 
-.playername {
-  color: #FFF;
+.player-ovr {
+  background-image: url(ASSETS/ovrbdg.svg);
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  background-position: 0 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.player-ovr .ovrnum {
+  font-family: Alata;
+  font-size: 20px;
+  color: #fff;
+  line-height: 0.9;
+  margin: 0;
+}
+.player-ovr .ovrtxt {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.player-info {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.player-name {
+  color: #fff;
   text-align: center;
   font-family: Montserrat;
   font-size: 36px;
@@ -74,114 +142,76 @@
   line-height: 30px;
   margin-block: 0;
   text-align: center;
+  order: 2;
 }
 
-.ovr {
-  background-image: url(/ASSETS/ovrbdg.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 0 0;
-  position: absolute;
-  top: 1px;
-  left: 328px;
-}
-
-.ovr-rating {
-  background: linear-gradient(135deg, #2c5aa0, #1a3a6b);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  width: 70px;
-  height: 78px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.ovr-num {
-  font-family: Alata;
-  font-size: 30px;
-  color: #fff;
-  line-height: 1;
-}
-
-.ovrtxt {
-  font-size: 10px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 1px;
-}
-
-.jersey {
+.player-number {
   font-family: "Alata", sans-serif;
   font-size: 64px;
   font-weight: bold;
   color: white;
   text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  margin-block: 0;
+  margin: 0;
   text-align: center;
-  animation: numPop 0.4s 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  position: relative;
-  top: 30px;
+  line-height: 0.8;
 }
 
-.bio {
+.player-bio {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   color: white;
   font-size: 10px;
   line-height: 1.5;
   text-align: center;
-  position: relative;
-  top: 19px;
 }
 
-.logo-bc {
-  height: 52px;
-  width: 57px;
+.player-logos {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+}
+.player-logos img {
+  height: 40px;
+  width: auto;
 }
 
-button {
+.btn {
   background: #e8d5f0;
-  color: #5C509C;
+  color: #5c509c;
   font-family: Montserrat;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 14px 28px;
+  padding: 12px 24px;
   border-radius: 50px;
   border: 2px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
   align-self: flex-start;
-  margin-top: auto;
   transition: all 0.2s;
-  order: 7;
-  display: inline-block;
   align-items: center;
 }
 
-button:hover {
+.btn-player-stats {
+  align-self: flex-end;
+  position: relative;
+  z-index: 3;
+}
+
+.btn:hover {
   background: rgba(255, 255, 255, 0.35);
   border-color: rgba(255, 255, 255, 0.7);
   transform: translateY(-1px);
 }
 
-.card-face.card-back {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
-  display: block;
-  position: absolute;
-}
-
-.card-face {
-  position: relative;
-  background-image: url(/ASSETS/bcraven.jpg);
-  width: 480px;
+.card-back {
+  background-image: url(../ASSETS/bcraven.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .card-back:after {
@@ -189,7 +219,8 @@ button:hover {
   width: 80px;
   height: 80px;
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-  background-color: #574B96;
+  background-color: #574b96;
+  position: absolute;
   right: 0;
   bottom: 0;
 }
@@ -199,22 +230,47 @@ button:hover {
   width: 80px;
   height: 80px;
   clip-path: polygon(0 1%, 0% 100%, 100% 0);
-  background-color: #574B96;
+  background-color: #574b96;
+  position: absolute;
   left: 0;
   top: 0;
 }
 
-.bheader {
+.header-back {
   transform: rotate(-90deg);
+  transform-origin: center;
   color: #ffffff;
-  font-size: 26px;
+  font-size: 48px;
   font-style: normal;
   font-weight: 800;
   line-height: 40px;
   text-wrap: nowrap;
   position: absolute;
-  top: 215px;
-  right: 0;
+  top: 200px;
+  right: -170px;
+}
+
+* {
+  outline: 1px solid red;
+}
+
+.player-stats {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3em 5em 2em 2em;
+}
+
+.stat-value,
+.accolades,
+.player-attributes {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: #e8d5f0;
 }
 
 .stats-top-row {
@@ -259,7 +315,7 @@ button:hover {
   margin-bottom: 16px;
 }
 
-.attribute-grid {
+.player-attributes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 14px;
@@ -290,4 +346,8 @@ button:hover {
   color: #999;
   letter-spacing: 0.08em;
   margin-top: 3px;
+}
+
+.card-inner.card-flip {
+  transform: rotateY(180deg);
 }/*# sourceMappingURL=styles.css.map */
