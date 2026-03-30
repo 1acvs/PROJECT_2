@@ -274,7 +274,7 @@ $secondary: #e8d5f0;
 .player-attributes {
   width: 100%;
   height: fit-content;
-  color: $secondary;
+  color: $primary;
 }
 .stats-top-row {
   display: flex;
@@ -286,7 +286,7 @@ $secondary: #e8d5f0;
 .height-stat {
   display: flex;
   flex-direction: column;
-  position: relative;
+  
   left: 8px;
     top: 52px;
 }
@@ -294,7 +294,7 @@ $secondary: #e8d5f0;
 .height-stat .h-stat {
   font-size: 3.2rem;
   font-weight: 900;
-  color: #fff9f9;
+  color: #f20000;
   line-height: 1;
   position: relative;
     
