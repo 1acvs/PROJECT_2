@@ -125,6 +125,197 @@
       <!-- end card inner -->
     </div>
     <!-- end card -->
+
+    <div class="shell" role="main">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="pos-badge">
+      <div class="pos">WR</div>
+      <div class="pos-sub">Wide Rcvr</div>
+    </div>
+    <div class="player-info">
+      <div class="player-name">Zay Flowers</div>
+      <div class="player-school">Boston College · #4</div>
+    </div>
+    <div class="player-num"></div>
+    <div class="ovr-badge">
+      <div class="ovr-num">96</div>
+      <div class="ovr-sub">OVR</div>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat"><div class="stat-v">78</div><div class="stat-l">Receptions</div></div>
+    <div class="stat"><div class="stat-v">1,077</div><div class="stat-l">Rec Yds</div></div>
+    <div class="stat"><div class="stat-v">12</div><div class="stat-l">TDs</div></div>
+    <div class="stat"><div class="stat-v">13.8</div><div class="stat-l">Yds / Rec</div></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body2">
+
+    <!-- SCOUT INFO -->
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">Scout Info</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="fg" id="fg-name">
+        <label for="f-name"><span>Scout Name</span><span class="cc" id="cc-name">0/40</span></label>
+        <div style="position:relative;">
+          <input type="text" id="f-name" placeholder="e.g. Bucko Kilroy" maxlength="40" autocomplete="off" aria-required="true"/>
+          <span class="fi si">✓</span><span class="fi ei">✕</span>
+        </div>
+        <div class="fb" id="fb-name" role="alert"></div>
+      </div>
+      <div class="row2">
+        <div class="fg" id="fg-email">
+          <label for="f-email">Email</label>
+          <div style="position:relative;">
+            <input type="email" id="f-email" placeholder="you@nflscouts.com" autocomplete="off" aria-required="true"/>
+            <span class="fi si">✓</span><span class="fi ei">✕</span>
+          </div>
+          <div class="fb" id="fb-email" role="alert"></div>
+        </div>
+        <div class="fg" id="fg-grade">
+          <label for="f-grade">Overall Grade</label>
+          <div style="position:relative;">
+            <select id="f-grade" aria-required="true">
+              <option value="">Select</option>
+              <option value="A+">A+ — Elite</option>
+              <option value="A">A — Excellent</option>
+              <option value="B+">B+ — Above Avg</option>
+              <option value="B">B — Average</option>
+              <option value="C">C — Below Avg</option>
+            </select>
+            <span class="fi si">✓</span><span class="fi ei">✕</span>
+          </div>
+          <div class="fb" id="fb-grade" role="alert"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATHLETIC MEASURABLES -->
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">Athletic Measurables</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="row3">
+        <div class="fg">
+          <label for="f-forty">40-Yard Dash</label>
+          <div class="input-unit">
+            <input type="number" id="f-forty" placeholder="4.45" step="0.01" min="4.0" max="6.0"/>
+            <span class="unit-label">sec</span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-vert">Vertical Jump</label>
+          <div class="input-unit">
+            <input type="number" id="f-vert" placeholder="38.5" step="0.5" min="20" max="50"/>
+            <span class="unit-label">in</span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-broad">Broad Jump</label>
+          <div class="input-unit">
+            <input type="number" id="f-broad" placeholder="130" step="1" min="80" max="160"/>
+            <span class="unit-label">in</span>
+          </div>
+        </div>
+      </div>
+      <div class="row3">
+        <div class="fg">
+          <label for="f-cone">3-Cone Drill</label>
+          <div class="input-unit">
+            <input type="number" id="f-cone" placeholder="6.82" step="0.01" min="6.0" max="8.0"/>
+            <span class="unit-label">sec</span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-shuttle">Short Shuttle</label>
+          <div class="input-unit">
+            <input type="number" id="f-shuttle" placeholder="4.10" step="0.01" min="3.5" max="5.5"/>
+            <span class="unit-label">sec</span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-bench">Bench Reps</label>
+          <div class="input-unit">
+            <input type="number" id="f-bench" placeholder="12" step="1" min="0" max="50"/>
+            <span class="unit-label">× 225</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSITION TRAIT RATINGS -->
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">Position Trait Ratings</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="traits-grid" id="traits-grid">
+        <!-- injected by JS -->
+      </div>
+    </div>
+
+    <!-- ROUND PROJECTION & NFL COMP -->
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">Round Projection &amp; NFL Comp</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="fg">
+        <label>Projected Round</label>
+        <div class="round-btns" id="round-btns">
+          <button class="round-btn day1" data-round="Day 1 (R1)">Day 1 · R1</button>
+          <button class="round-btn day2" data-round="Day 2 (R2-3)">Day 2 · R2–3</button>
+          <button class="round-btn day3" data-round="Day 3 (R4-7)">Day 3 · R4–7</button>
+          <button class="round-btn udfa" data-round="UDFA">UDFA</button>
+        </div>
+        <div class="fb" id="fb-round" role="alert"></div>
+      </div>
+      <div class="fg">
+        <label for="f-comp">NFL Comparable Player</label>
+        <div class="comp-input-wrap">
+          <input type="text" id="f-comp" placeholder="e.g. Stefon Diggs" maxlength="60" autocomplete="off"/>
+        </div>
+        <div id="comp-tag-wrap">
+          <div class="comp-tag" id="comp-tag">
+            <span id="comp-tag-name"></span>
+            <button type="button" id="comp-clear" aria-label="Remove comp">×</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCOUT NOTES -->
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">Scout Notes</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="fg" id="fg-notes">
+        <label for="f-notes"><span>Observations</span><span class="cc" id="cc-notes">0/300</span></label>
+        <textarea id="f-notes" placeholder="Route running, hands, YAC ability, separation quickness, press coverage response…" maxlength="300" rows="4" aria-required="true"></textarea>
+        <div class="fb" id="fb-notes" role="alert"></div>
+      </div>
+    </div>
+
+    <button class="btn" id="sub-btn" type="button">Submit Report</button>
+    <div class="toast" id="toast">
+      <span id="t-ico"></span>
+      <span id="t-msg"></span>
+    </div>
+
+  </div><!-- /body -->
+</div><!-- /shell -->
+
+
+
     <script src="JS/scripts.js"></script>
   </body>
 </html>
